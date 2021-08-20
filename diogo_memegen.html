@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Memegen</title>
+</head>
+
+<body>
+
+    <section id="input_section">
+        <header>
+
+        </header>
+
+
+        <form action="#" id="newMemeForm">
+            <h1>I CAN HAZ MEMEZ?</h1>
+            <p>Fill out the form to start creating memes!</p>
+            <section>
+                <label for="meme_image_url">Image: </label>
+                <input type="url" name="meme_image_url" id="meme_image_url" autofocus>
+                <input type="submit" value="Add Image">
+            </section>
+        </form>
+
+        <section id="memeList">
+            bla
+        </section>
+
+
+        <script>
+            window.onload = function () {
+                // retrieve from localStorage
+                var savedMemes = JSON.parse(localStorage.getItem("memes")) || []
+                for (var i = 0; i < savedMemes.length; i++) {
+                    var newMeme = document.createElement("img");
+                    newMeme.src = savedMemes[i].src
+                    memeList.appendChild(newMeme);
+                }
+
+                var memeForm = document.getElementById("newMemeForm");
+                var memeList = document.getElementById("memeList");
+
+                memeForm.addEventListener("submit", function () {
+                    var newMeme = document.createElement("img");
+                    newMeme.src = document.getElementById("meme_image_url");
+                    memeForm.reset();
+                    memeList.appendChild(newMeme);
+                    // save to localStorage
+                    savedMemes.push({ src: newMeme.src });
+                    localStorage.setItem("memes", JSON.stringify(savedMemes));
+                })
+            };
+        </script>
+</body>
+
+</html>

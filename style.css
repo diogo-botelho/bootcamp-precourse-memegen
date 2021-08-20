@@ -1,0 +1,61 @@
+  
+  html {
+	color: #555;
+	font-family: "Raleway", "Arial", "sans-serif", "Impact"
+	font-weight: 400;
+	font-size: 16px;
+	text-rendering: optimizeLegibility;
+	}
+
+
+  #input_section {
+    background-color: #DDDDDD;
+    width: 100%;
+}
+
+#input_section h1,p {
+    text-align: center;
+}
+
+form input {
+    width:100%;
+}
+
+#submit_form {
+    text-align: right;
+    padding: 10px;
+}
+
+.gallery .meme {
+    width: 30%;
+    float:left;
+    position:relative;
+}
+.gallery .meme_image {
+    max-height:auto;
+    width:95%;
+}
+
+.gallery .meme .text {
+    font-family: sans-serif;
+    position:absolute;
+    width:90%;
+    left:2.5%;
+    font-size: 30px;
+    max-width: 90%;
+    color:black;
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: 1000;
+   -webkit-text-fill-color: white; 
+   -webkit-text-stroke-width: 1.3px;
+   -webkit-text-stroke-color: black;
+}
+
+.gallery .meme .top {
+    top: 5%;
+}
+
+.gallery .meme .bottom {
+    bottom: 5%;
+}
