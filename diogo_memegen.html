@@ -10,52 +10,34 @@
 </head>
 
 <body>
-
     <section id="input_section">
-        <header>
-
-        </header>
-
-
         <form action="#" id="newMemeForm">
             <h1>I CAN HAZ MEMEZ?</h1>
             <p>Fill out the form to start creating memes!</p>
             <section>
-                <label for="meme_image_url">Image: </label>
-                <input type="url" name="meme_image_url" id="meme_image_url" autofocus>
+                <div><label for="image_url">Image: </label>
+                    <input type="url" name="image_url" id="image_url" autofocus>
+                </div>
+                <div>
+                    <label for="top_text">Upper Text:</label>
+                    <input type="text" class="text" id="top_text">
+                </div>
+                <div>
+                    <label for="bottom_text">Lower Text:</label>
+                    <input type="text" class="text" id="bottom_text">
+                </div>
+
                 <input type="submit" value="Add Image">
             </section>
         </form>
+    </section>
+    <section id="meme-gallery">
+        <ul class="gallery">
+        </ul>
+    </section>
 
-        <section id="memeList">
-            bla
-        </section>
 
-
-        <script>
-            window.onload = function () {
-                // retrieve from localStorage
-                var savedMemes = JSON.parse(localStorage.getItem("memes")) || []
-                for (var i = 0; i < savedMemes.length; i++) {
-                    var newMeme = document.createElement("img");
-                    newMeme.src = savedMemes[i].src
-                    memeList.appendChild(newMeme);
-                }
-
-                var memeForm = document.getElementById("newMemeForm");
-                var memeList = document.getElementById("memeList");
-
-                memeForm.addEventListener("submit", function () {
-                    var newMeme = document.createElement("img");
-                    newMeme.src = document.getElementById("meme_image_url");
-                    memeForm.reset();
-                    memeList.appendChild(newMeme);
-                    // save to localStorage
-                    savedMemes.push({ src: newMeme.src });
-                    localStorage.setItem("memes", JSON.stringify(savedMemes));
-                })
-            };
-        </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
